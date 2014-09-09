@@ -1,0 +1,7 @@
+# Site settings
+title: "org.nushackers.digest"
+google_analytics: 
+
+# Build settings
+markdown: kramdown
+permalink: pretty
