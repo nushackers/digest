@@ -1,6 +1,7 @@
 # Site settings
 title: "org.nushackers.digest"
-google_analytics: 
+baseurl: ""
+url: "http://digest.nushackers.org"
 
 # Build settings
 markdown: kramdown
