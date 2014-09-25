@@ -1,7 +1,5 @@
 # Site settings
 title: "org.nushackers.digest"
-baseurl: ""
-url: "http://digest.nushackers.org"
 
 # Build settings
 markdown: kramdown
