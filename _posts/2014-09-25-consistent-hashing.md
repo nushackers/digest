@@ -3,23 +3,23 @@ layout:     post
 title:      Consistent Hashing
 date:       2014-09-25
 author: 	ymichael
-categories: 
+categories:
 ---
 
-If you've ever taken a Data Structures course or any written a sufficiently complex program, you probably know what a [Hash Table][] is.
+If you've ever taken a Data Structures course or written a sufficiently complex program, you probably know what a [Hash Table][] is.
 
 ## Some background
 > In computing, a hash table (also hash map) is a data structure used to implement an associative array, a structure that can map keys to values. -Wikipedia
 
 The key idea behind a Hash Table is the computation of an index using a __hash function__ to determine which 'bucket' or 'slot' to insert the given value.
 
-Assuming we choose a fairly good hash function, and have sufficiently large number of slots, we are able to map each key to a unique bucket _(less collisions)_ and there for achieve a __`O(1)`__ constant cost per operation (`get`, `set`).
+Assuming we choose a fairly good hash function, and have sufficiently large number of slots, we are able to map each key to a unique bucket _(less collisions)_ and therefore achieve an __`O(1)`__ constant cost per operation (`get`, `set`).
 
 When the __load__ on the hash table gets above a certain threshold, we do a __`resize operation`__.
 
 > Resizing is accompanied by a full or incremental table rehash whereby existing items are mapped to new bucket locations. -Wikipedia
 
-_If we choose when to resize carefully, this still leaves us with an [amortized][] constant time operations._
+_If we choose when to resize carefully, this still leaves us with [amortized][] constant time operations._
 
 ## The problem
 Imagine you decide to design and implement caching layer on top of you extremely popular application. You decide that a __hash table__ is a perfect data structure to implement this [cache][].
@@ -31,7 +31,7 @@ __What happens when you can't fit your entire cache on a single machine?__
 2 machines! A distributed hash table ([DHT][])!
 
 ## Keyspace partitioning
-If you've been following along, the question you should have right now, is __how do you resize a DHT accross machines?__
+If you've been following along, the question you should have right now, is __how do you resize a DHT across machines?__
 
 If you think about it, if you had say, a million key-value pairs distributed across 5 machines, and now wanted to add 2 more machines (i.e. grow the hash table), resizing and rehashing all of them seems like a bad idea and probably a last resort.
 
@@ -44,9 +44,9 @@ The key benefit of consistent hashing is that we can avoid rehashing every objec
 0. Say for instance, we __randomly scatter each machine on the circle__ (perhaps by hashing its IP address, or some unique identifier)
 0. We end up with machines along random points of the circle.
 0. For each key, we similarly hash it as before but using modulo arithmetic, place the resulting hash value on a point on this circle.
-0. __The closest machine to this point is resposible for storing this key__.
+0. __The closest machine to this point is responsible for storing this key__.
 
-Now when we add a new machine, its easy to see how only a couple of keys _(to the left and right of this new machine)_ need to be "re-hashed" and we end up with more "slots" in out DHT.
+Now when we add a new machine, it is easy to see how only a couple of keys _(to the left and right of this new machine)_ need to be "re-hashed" and we end up with more "slots" in out DHT.
 
 _I'm obviously glossing over a lot of the intricate details here but hopefully you get the idea_.
 
