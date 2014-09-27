@@ -3,6 +3,7 @@ layout:     post
 title:      Consistent Hashing
 date:       2014-09-25
 author: 	ymichael
+summary:    "What happens when you try and resize a Distributed Hash Table?"
 categories:
 ---
 
