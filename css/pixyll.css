@@ -1,3 +1,13 @@
+
+/**
+ * CUSTOM STYLES.
+ */
+.post-header h1 {
+    padding: 0;
+    margin-top: 0;
+}
+
+
 @charset "UTF-8";
 /*
 
@@ -295,6 +305,7 @@ h6 {
   }
 }
 
+/*
 @media screen and (min-width: 64em) {
   .h1,
   h1 {
@@ -328,6 +339,7 @@ h6 {
     padding-bottom: 0;
   }
 }
+*/
 
 footer {
   border-top: thin solid #f3f3f3;
