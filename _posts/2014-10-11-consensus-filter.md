@@ -3,7 +3,7 @@ layout:     post
 title:      Consensus Filters
 date:       2014-10-11
 author: 	yyjhao
-summary:    "Low-level distributed communication"
+summary:    "Very distributed communication"
 categories:
 ---
 
