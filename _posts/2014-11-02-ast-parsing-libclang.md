@@ -6,9 +6,6 @@ author: 	vishnu
 summary:    "What happens when you try and resize a Distributed Hash Table?"
 categories:
 ---
-
-#Auto Code Injection with libclang
-
 ##Motivation
 I've always been fascinated by IDEs. Long have I wondered how do they what they do: syntax highlighting, code completion, method refactoring and so much more. Recently, I had a bunch of time on my hands and I decided to figure out how an IDE works its magic. I chose to play around with XCode because that's my favourite IDE.
 
